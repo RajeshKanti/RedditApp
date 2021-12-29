@@ -28,10 +28,17 @@ class HomeViewController: UIViewController {
     private func setupClosures() {
         
         homeViewModel = HomeViewModel()
-        homeViewModel?.bindHomeViewModelToController = {
+        
+        homeViewModel?.refreshData = { [weak self] in
             DispatchQueue.main.async {
-                self.homeTableView.reloadData()
-                self.homeTableView.isHidden = false
+                self?.homeTableView.reloadData()
+                self?.homeTableView.isHidden = false
+            }
+        }
+        
+        homeViewModel?.showError = { [weak self] (error) in
+            DispatchQueue.main.async {
+                AlertUtility.showAlert(self!, title: "Error", message: error, buttonTitles: ["OK"], completionHandler: nil)
             }
         }
     }

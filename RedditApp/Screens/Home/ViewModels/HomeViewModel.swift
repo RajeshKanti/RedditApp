@@ -7,25 +7,31 @@
 
 import Foundation
 
-class HomeViewModel {
+class HomeViewModel: BaseViewModel {
     
     private var apiService : APIService!
     private(set) var redditResponse : RedditResponse? {
         didSet {
-            self.bindHomeViewModelToController()
+            self.refreshData?()
         }
     }
     
     var bindHomeViewModelToController : (() -> ()) = {}
     
-    init() {
+    override init() {
+        super.init()
         self.apiService =  APIService()
-        getRedditData()
+        self.getRedditData()
     }
     
     func getRedditData() {
-        self.apiService.getRedditData(completion: { redditResp in
-            self.redditResponse = redditResp
+        self.apiService.getRedditData(completion: { response, error  in
+            
+            if let _ = response {
+                self.redditResponse = response
+            } else {
+                self.showError?(error?.localizedDescription ?? "")
+            }
         })
     }
 }
