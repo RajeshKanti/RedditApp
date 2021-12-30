@@ -24,7 +24,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="up-vote-icon"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="121" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6n-E1-PYt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="121" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="s6n-E1-PYt">
                                 <rect key="frame" x="0.0" y="33" width="39" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -72,7 +72,7 @@
                         <rect key="frame" x="67" y="91" width="433" height="251"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cOM-O7-SC0">
-                        <rect key="frame" x="20" y="350" width="480" height="30"/>
+                        <rect key="frame" x="10" y="350" width="500" height="30"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFL-Y8-UQu">
                                 <rect key="frame" x="0.0" y="0.0" width="122.5" height="30"/>
@@ -113,10 +113,10 @@
                     <constraint firstItem="gh9-eh-srL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" symbolic="YES" id="Bo6-sM-fCL"/>
                     <constraint firstItem="gPv-u6-ydl" firstAttribute="top" secondItem="gh9-eh-srL" secondAttribute="bottom" constant="20" id="CQf-Qh-yhI"/>
                     <constraint firstItem="cOM-O7-SC0" firstAttribute="top" secondItem="gPv-u6-ydl" secondAttribute="bottom" constant="8" symbolic="YES" id="L8s-Xg-Sg7"/>
-                    <constraint firstAttribute="trailing" secondItem="cOM-O7-SC0" secondAttribute="trailing" constant="20" id="QaN-7c-aj1"/>
+                    <constraint firstAttribute="trailing" secondItem="cOM-O7-SC0" secondAttribute="trailing" constant="10" id="QaN-7c-aj1"/>
                     <constraint firstAttribute="trailing" secondItem="gPv-u6-ydl" secondAttribute="trailing" constant="20" id="RxN-MX-ijZ"/>
                     <constraint firstItem="gPv-u6-ydl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="67" id="TsR-M1-FfF"/>
-                    <constraint firstItem="cOM-O7-SC0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="cAo-Dx-RaX"/>
+                    <constraint firstItem="cOM-O7-SC0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="cAo-Dx-RaX"/>
                     <constraint firstItem="gh9-eh-srL" firstAttribute="leading" secondItem="LnG-t0-cg5" secondAttribute="trailing" constant="20" id="dYo-8D-gtd"/>
                     <constraint firstItem="LnG-t0-cg5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="nAq-tp-aEX"/>
                     <constraint firstAttribute="trailing" secondItem="gh9-eh-srL" secondAttribute="trailing" constant="20" id="p3w-0s-DUz"/>
