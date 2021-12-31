@@ -8,10 +8,8 @@
 import Foundation
 
 struct RedditResponse: Codable {
-    
     let kind: String
     let data: RedditData
-    
 }
 
 struct RedditData: Codable {
@@ -22,7 +20,6 @@ struct RedditData: Codable {
 }
 
 struct RedditDict: Codable {
-    
     let data: Reddit
 }
 

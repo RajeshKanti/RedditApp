@@ -10,23 +10,6 @@
 
 @interface DetailsViewController ()
 
-//@IBOutlet weak var voteCountLabel: UILabel!
-//@IBOutlet weak var postTimeLabel: UILabel!
-//@IBOutlet weak var pictureLabel: UILabel! {
-//    didSet {
-//        pictureLabel.textColor = .white
-//        pictureLabel.backgroundColor = .purple
-//        pictureLabel.layer.masksToBounds = true
-//        pictureLabel.layer.cornerRadius = pictureLabel.frame.height / 2
-//    }
-//}
-//@IBOutlet weak var postTitleLabel: UILabel!
-//@IBOutlet weak var postImageView: UIImageView!
-//
-//@IBOutlet weak var commentsButton: UIButton!
-//@IBOutlet weak var shareButton: UIButton!
-//@IBOutlet weak var saveButton: UIButton!
-
 @property (weak, nonatomic) IBOutlet UILabel *voteCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *postTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *discussionLabel;
@@ -71,7 +54,6 @@
         _imageViewHeightConstraint.priority = UILayoutPriorityRequired;
         _imageViewHeightConstraint.constant = 0;
     }
-
 }
 
 @end
