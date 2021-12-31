@@ -54,7 +54,7 @@ class HomeViewController: UIViewController {
             postDetailsModel.title = homeViewModel?.selectedRedditModel?.title
             postDetailsModel.postDesc = homeViewModel?.selectedRedditModel?.postDesc
             postDetailsModel.commentsCount = homeViewModel?.selectedRedditModel?.commentsCount ?? 0
-            postDetailsModel.imageUrl = homeViewModel?.selectedRedditModel?.iconUrl
+            postDetailsModel.imageUrl = homeViewModel?.selectedRedditModel?.fullIconUrl
             detailsVC.detailsModel = postDetailsModel
         }
     }

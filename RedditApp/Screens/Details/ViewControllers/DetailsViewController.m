@@ -36,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *commentsButton;
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewHeightConstraint;
 
 @end
 
@@ -61,47 +62,16 @@
     _discussionLabel.layer.masksToBounds = YES;
     _discussionLabel.layer.cornerRadius = _discussionLabel.frame.size.height / 2;
     
-    if (_detailsModel.imageUrl != nil) {
+    if (_detailsModel.imageUrl != nil && ([_detailsModel.imageUrl containsString:@".png"] || [_detailsModel.imageUrl containsString:@".jpg"])) {
         [_postImageView setHidden:NO];
         NSURL *url = [NSURL URLWithString:_detailsModel.imageUrl];
         _postImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
     } else {
         [_postImageView setHidden:YES];
+        _imageViewHeightConstraint.priority = UILayoutPriorityRequired;
+        _imageViewHeightConstraint.constant = 0;
     }
 
 }
-
-//-(void) downloadImageFromUrl {
-//
-//    if (_detailsModel.imageUrl != nil) {
-//        NSString *strImgURLAsString = _detailsModel.imageUrl;
-////        [strImgURLAsString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//
-//        NSURLSessionTask
-//
-//        NSURL *imgURL = [NSURL URLWithString:strImgURLAsString];
-//        [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:imgURL] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-//            if (!connectionError) {
-//                UIImage *img = [[UIImage alloc] initWithData:data];
-//                // pass the img to your imageview
-//            }else{
-//                NSLog(@"%@",connectionError);
-//            }
-//        }];
-//
-//    }
-//}
-
-
-//func setImageFromUrl(ImageURL :String) {
-//    URLSession.shared.dataTask( with: NSURL(string:ImageURL)! as URL, completionHandler: {
-//        (data, response, error) -> Void in
-//        DispatchQueue.main.async {
-//            if let data = data {
-//                self.postImageView.image = UIImage(data: data)
-//            }
-//        }
-//    }).resume()
-//}
 
 @end
