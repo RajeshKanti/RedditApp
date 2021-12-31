@@ -29,7 +29,7 @@ class HomeTableViewCell: UITableViewCell {
     
     func setupData(cellVM: Reddit) {
         
-        voteCountLabel.text = "123"
+        voteCountLabel.text = cellVM.upVotes?.description ?? "0"
         postTitleLabel.text = cellVM.title
         
         if let authorFullName = cellVM.authorFullName {
@@ -49,15 +49,14 @@ class HomeTableViewCell: UITableViewCell {
         }
     }
  
-          func setImageFromUrl(ImageURL :String) {
-             URLSession.shared.dataTask( with: NSURL(string:ImageURL)! as URL, completionHandler: {
-                (data, response, error) -> Void in
-                DispatchQueue.main.async {
-                   if let data = data {
-                       self.postImageView.image = UIImage(data: data)
-                   }
+    func setImageFromUrl(ImageURL :String) {
+        URLSession.shared.dataTask( with: NSURL(string:ImageURL)! as URL, completionHandler: {
+            (data, response, error) -> Void in
+            DispatchQueue.main.async {
+                if let data = data {
+                    self.postImageView.image = UIImage(data: data)
                 }
-             }).resume()
-          }
-
+            }
+        }).resume()
+    }
 }

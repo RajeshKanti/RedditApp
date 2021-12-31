@@ -47,6 +47,15 @@ class HomeViewController: UIViewController {
         if segue.identifier == "navigateDetailsPage",
            let detailsVC = segue.destination as? DetailsViewController {
             
+            //Converting swift model to objective C supportable model
+            let postDetailsModel = RedditDetailsModel()
+            postDetailsModel.upVoteCount = homeViewModel?.selectedRedditModel?.upVotes ?? 0
+            postDetailsModel.authorFullName = homeViewModel?.selectedRedditModel?.authorFullName
+            postDetailsModel.title = homeViewModel?.selectedRedditModel?.title
+            postDetailsModel.postDesc = homeViewModel?.selectedRedditModel?.postDesc
+            postDetailsModel.commentsCount = homeViewModel?.selectedRedditModel?.commentsCount ?? 0
+            postDetailsModel.imageUrl = homeViewModel?.selectedRedditModel?.fullIconUrl
+            detailsVC.detailsModel = postDetailsModel
         }
     }
 }
@@ -70,6 +79,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let redditResponse = homeViewModel?.redditResponse {
+            homeViewModel?.selectedRedditModel = redditResponse.data.children[indexPath.row].data
+        }
+
         performSegue(withIdentifier: "navigateDetailsPage", sender: nil)
     }
 }

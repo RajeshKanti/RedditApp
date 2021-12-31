@@ -33,6 +33,9 @@ struct Reddit: Codable {
     let createdUtcTime: Int?
     let iconUrl: String?
     let commentsCount: Int?
+    let upVotes: Int?
+    let postDesc: String?
+    let fullIconUrl: String?
     
     enum CodingKeys: String, CodingKey {
         case authorFullName = "author_fullname"
@@ -40,5 +43,8 @@ struct Reddit: Codable {
         case createdUtcTime = "created_utc"
         case iconUrl = "thumbnail"
         case commentsCount = "num_comments"
+        case upVotes = "ups"
+        case postDesc = "description"
+        case fullIconUrl = "url"
     }
 }

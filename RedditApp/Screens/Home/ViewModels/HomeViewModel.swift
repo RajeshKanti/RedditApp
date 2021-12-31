@@ -10,7 +10,9 @@ import Foundation
 class HomeViewModel: BaseViewModel {
     
     private var apiService : APIService!
-    private(set) var redditResponse : RedditResponse? {
+    var selectedRedditModel: Reddit?
+    
+    private(set) var redditResponse: RedditResponse? {
         didSet {
             self.refreshData?()
         }
